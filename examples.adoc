@@ -253,8 +253,6 @@ It's possible to use emojis as admonition icons on GitHub.
 
 === Checkbox
 
-Check out {url-home}[Asciidoctor]!
-
 {checkedbox} That's done!
 
 
