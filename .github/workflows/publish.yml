@@ -1,4 +1,4 @@
-name: Publish Antora Site to GitHub Pages with Lunr Search
+name: Publish Antora Site to GitHub Pages with Search
 on:
   push:
     branches: [main]
