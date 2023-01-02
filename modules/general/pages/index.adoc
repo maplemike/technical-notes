@@ -1,0 +1,9 @@
+= Technical Notes
+Michael MacKinnon <michaelmackinnon@mac.com>
+:authorinitials: MM
+:description: Welcome to my technical notes
+:keywords: intro, technical-notes
+
+== Welcome to my tech notes
+
+These pages contain technical notes from working on a diverse set of technologies.

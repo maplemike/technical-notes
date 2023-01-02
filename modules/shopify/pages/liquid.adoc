@@ -1,0 +1,29 @@
+= Shopify Liquid
+Michael MacKinnon <michaelmackinnon@mac.com>
+:authorinitials: MM
+:description: Shopify Liquid code examples
+:sectnums:
+:url-repo: https://my-git-repo.com 
+:toc-title: My Content
+:source-highlighter: highlight.js
+:experimental:
+:keywords: shopify, liquid, code, examples, template-language
+
+== Tag detection
+
+////
+A multi-line comment.
+
+Notice it's a delimited block.
+////
+
+Select menu:View[Zoom > Reset] to reset the zoom level to the default setting.
+
+IMPORTANT: Shopify states that tags aren't case-sensitive; however, they are. This is a known issue, and they're working on it.
+
+.Liquid Template Example
+[source,liquid]
+----
+{% assign customer_tags_dc = customer.tags | join: '~~~' | downcase | split: '~~~' %}
+{% if customer_tags_dc contains 'vouched' %}
+----

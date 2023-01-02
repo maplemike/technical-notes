@@ -1,0 +1,25 @@
+name: docs
+title: Technical information
+version: main # Define a Component Version with No Version
+display_version: main
+prerelease: false
+start_page: general:index.adoc
+nav:
+  - modules/shopify/nav.adoc
+  - modules/general/nav.adoc
+asciidoc:
+  attributes:
+    # for antora
+    experimental: ""
+    icons: font
+    # for the project
+    context: docs
+    ibmsg: IBM Style Guide
+    ibmsg-print: IBM Style Guide (print)
+    ibmsg-url-print: https://www.pearson.com/us/higher-education/program/De-Respinis-IBM-Style-Guide-The-Conventions-for-Writers-and-Editors/PGM270594.html?tab=contents
+    ibmsg-url: https://www.ibm.com/docs/en/ibm-style
+    repository-name: technical-notes
+    repository-url: https://github.com/maplemike/technical-notes/
+    repository-clone-url: git@github.com:maplemike/technical-notes.git
+    valedict: Custom Vale open-source dictionary for American English.
+    valedict-url: https://github.com/errata-ai/en_US-web

@@ -1,0 +1,292 @@
+= AsciiDoc Syntax Quick Reference
+Michael MacKinnon <michaelmackinnon@mac.com>
+:navtitle: Syntax Quick Reference
+:description: The quick reference for common AsciiDoc document and text formatting markup.
+:collapsible:
+:toc:
+:toc-title: Table of Cool Shit 
+:url-char-xml: https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
+:url-data-uri: https://developer.mozilla.org/en-US/docs/data_URIs
+:!table-frame:
+:!table-grid:
+// release-version is used for an example; it's not the release version for this document
+:release-version: 2.4.3
+// :icons: font
+:experimental:
+:checkedbox: pass:normal[{startsb}&#10004;{endsb}]
+
+////
+This document is not meant to be a replacement for the documentation of the AsciiDoc language itself.
+It's meant to be a helpful guide you can give to a writer to refer to while in the thick of writing.
+Think of it a quick reminder of the most common syntax and scenarios.
+It should not go into any depth about AsciiDoc processing or the options you can use when converting to an output format.
+////
+
+[IMPORTANT]
+The examples on this page demonstrate the output produced by the built-in HTML converter.
+AsciiDoc expects an AsciiDoc converter to produce complementary output when generating other output formats, such as PDF, EPUB, and DocBook.
+
+
+
+
+////
+Possible change for future to `%collapsible` blocks
+
+.Normal
+----
+Paragraphs don't require any special markup in AsciiDoc.
+A paragraph is just one or more lines of consecutive text.
+
+To begin a new paragraph, separate it by at least one empty line.
+Line breaks within a paragraph are not displayed.
+----
+
+.View Result (Normal)
+[%collapsible.result]
+====
+Paragraphs don't require any special markup in AsciiDoc.
+A paragraph is just one or more lines of consecutive text.
+
+To begin a new paragraph, separate it by at least one empty line.
+Line breaks within a paragraph are not displayed.
+====
+
+
+
+.Normal
+[tabs]
+====
+Source::
++
+----
+Paragraphs don't require any special markup in AsciiDoc.
+A paragraph is just one or more lines of consecutive text.
+
+To begin a new paragraph, separate it by at least one empty line.
+Line breaks within a paragraph are not displayed.
+----
+
+Output::
++
+--
+Paragraphs don't require any special markup in AsciiDoc.
+A paragraph is just one or more lines of consecutive text.
+
+To begin a new paragraph, separate it by at least one empty line.
+Line breaks within a paragraph are not displayed.
+--
+====
+////
+
+== Macros
+
+=== Keyboard Macro
+
+The keyboard macro uses the short (no target) macro syntax kbd:[key(+key)*].
+Asciidoc displays each key exactly as entered in the document.
+Asciidoc separates multiple keys by a plus (e.g., Ctrl+T) or a comma (e.g., Ctrl,T).
+The plus is preferred.
+
+// tag::src-base[]
+[source,asciidoc]
+----
+|===
+|Shortcut |Purpose
+
+|kbd:[F11]
+|Toggle fullscreen
+
+|kbd:[Ctrl+T]
+|Open a new tab
+
+|kbd:[Ctrl+Shift+N]
+|New incognito window
+
+|kbd:[\ ]
+|Used to escape characters
+
+|kbd:[Ctrl+\]]
+|Jump to keyword
+
+|kbd:[Ctrl + +]
+|Increase zoom
+|===
+----
+// end::src-base[]
+
+
+[sidebar]
+Sidebars are used to visually separate auxiliary bits of content
+that supplement the main text.
+
+
+.Optional Title
+****
+AsciiDoc uses sidebars to visually separate auxiliary bits of content
+that supplement the main text.
+
+TIP: They can contain any type of content.
+
+.Source code block in a sidebar
+[source,js]
+----
+const { expect, expectCalledWith, heredoc } = require('../test/test-utils')
+----
+****
+
+
+|===
+|Shortcut |Purpose
+
+|kbd:[F11]
+|Toggle fullscreen
+
+|kbd:[Ctrl+T]
+|Open a new tab
+
+|kbd:[Ctrl+Shift+N]
+|New incognito window
+
+|kbd:[\ ]
+|Used to escape characters
+
+|kbd:[Ctrl+\]]
+|Jump to keyword
+
+|kbd:[Ctrl + +]
+|Increase zoom
+|===
+
+
+=== Button Macro
+
+Press btn:[OK] when you are finished.
+
+Select a file in the file navigator and click btn:[Open].
+
+
+=== Menu Macro
+
+Trying to explain how to select a menu item can be a pain. With the menu macro, the symbols do the work.
+
+==== Example
+
+To save the file, select menu:File[Save].
+
+Select menu:View[Zoom > Reset] to reset the zoom level to the default setting.
+
+
+
+== Lists
+
+=== Basic Description Lists
+
+Here is an example:
+
+CPU:: The brain of the computer.
+Hard drive:: Permanent storage for operating system and/or user files.
+RAM:: Temporarily stores information the CPU uses during operation.
+Keyboard:: Used to enter text or control items on the screen.
+Mouse:: Used to point to and select items on your computer screen.
+Monitor:: Displays information in visual form using text and graphics.
+
+=== Separating Lists
+
+* Apples
+* Oranges
+
+//-
+
+* Walnuts
+* Almonds
+
+=== Description Lists
+
+==== Horizontal Description List
+
+Here is an example:
+
+[horizontal]
+CPU:: The brain of the computer.
+Hard drive:: Permanent storage for operating system and/or user files.
+RAM:: Temporarily stores information the CPU uses during operation.
+
+Here is an example:
+
+[horizontal,labelwidth=25,itemwidth=75]
+A short term:: The term for this item likely fits inside the column's width.
+A long term that wraps across multiple lines:: The term for this item wraps since the width of the term column is restricted using the `labelwidth` attribute.
+
+Here is an example:
+
+[unordered]
+boolean:: use true and false, not 1 and 0 or T and F
+number:: use Arabic numerals without punctuation (other than the decimal point to make a floating point number)
+enumerated value:: use only one of the allowed values, respecting case
+
+
+== Admonitions
+
+Here is an example:
+
+WARNING: Wolpertingers are known to nest in server racks.
+Enter at your own risk.
+
+Here is an example:
+
+:tip-caption: pass:[&#128161;]
+
+[TIP]
+It's possible to use Unicode glyphs as admonition icons.
+
+
+ifdef::env-github[]
+:tip-caption: :bulb:
+endif::[]
+
+[TIP]
+It's possible to use emojis as admonition icons on GitHub.
+
+
+== Substitutions
+
+=== Checkbox
+
+Check out {url-home}[Asciidoctor]!
+
+{summary}
+
+Be sure to read the {link-docs} too!
+
+{checkedbox} That's done!
+
+
+=== Copyright
+
+Copyright (C) 2023 Michael MacKinnon. All Rights Reserved.
+
+
+=== Ditaa
+
+[ditaa]
+....
+                   +-------------+
+                   | Asciidoctor |-------+
+                   |   diagram   |       |
+                   +-------------+       | PNG out
+                       ^                 |
+                       | ditaa in        |
+                       |                 v
+ +--------+   +--------+----+    /---------------\
+ |        | --+ Asciidoctor +--> |               |
+ |  Text  |   +-------------+    |   Beautiful   |
+ |Document|   |   !magic!   |    |    Output     |
+ |     {d}|   |             |    |               |
+ +---+----+   +-------------+    \---------------/
+     :                                   ^
+     |          Lots of work             |
+     +-----------------------------------+
+....
+
+
+Google was not sure what to do with that information.
