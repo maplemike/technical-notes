@@ -1,3 +1,4 @@
-.Shopify guide
+.General guide
 
 * xref:index.adoc[]
+* xref:asciidoc-examples.adoc[]

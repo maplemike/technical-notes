@@ -5,8 +5,8 @@ display_version: main
 prerelease: false
 start_page: general:index.adoc
 nav:
-  - modules/shopify/nav.adoc
   - modules/general/nav.adoc
+  - modules/shopify/nav.adoc
 asciidoc:
   attributes:
     # for antora

@@ -13,7 +13,6 @@ Michael MacKinnon <michaelmackinnon@mac.com>
 :release-version: 2.4.3
 // :icons: font
 :experimental:
-:url-home: https://maplemike.github.io/technical-notes/
 :checkedbox: pass:normal[{startsb}&#10004;{endsb}]
 
 ////
@@ -254,6 +253,10 @@ It's possible to use emojis as admonition icons on GitHub.
 === Checkbox
 
 Check out {url-home}[Asciidoctor]!
+
+{summary}
+
+Be sure to read the {link-docs} too!
 
 {checkedbox} That's done!
 
