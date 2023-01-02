@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Shopify Liquid :: Technical Notes</title>
+    <link rel="canonical" href="https://maplemike.github.io/technical-notes/docs/main/shopify/liquid/">
+    <meta name="description" content="Shopify Liquid code examples">
+    <meta name="keywords" content="shopify, liquid, code, examples, template-language">
+    <meta name="generator" content="Antora 3.1.2">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+<link rel="stylesheet" href="../../../../_/css/extra.css">
+<link rel="stylesheet" href="../../../../_/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="../../../../_/img/favicon.ico" type="image/x-icon">
+<script>var uiRootPath = '../../../../_'</script>
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <button class="navbar-burger" data-target="topbar-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <img src="../../../../_/img/project-logo.svg" class="navbar-logo" alt="Project logo">
+        <a href="https://maplemike.github.io/technical-notes/index.html">Technical Notes</a>
+      </div>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item hide-for-print">
+          <div id="search-field" class="field">
+            <input id="search-input" type="text" placeholder="Search the docs" autofocus>
+          </div>
+        </div>
+        <a class="navbar-item" href="https://github.com/maplemike/technical-notes/">
+          <img src="../../../../_/img/github.svg" alt="View source code on GitHub">
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="main">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../general/">Technical information</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">General guide</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../general/">Technical Notes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../general/asciidoc-examples/">Syntax Quick Reference</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Shopify guide</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="./">Shopify Liquid</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Technical information</span>
+    <span class="version">main</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../general/">Technical information</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../general/">main</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../general/" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../general/">Technical information</a></li>
+    <li>Shopify guide</li>
+    <li><a href="./">Shopify Liquid</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/maplemike/technical-notes/edit/main/modules/shopify/pages/liquid.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Shopify Liquid</h1>
+<div class="sect1">
+<h2 id="_tag_detection"><a class="anchor" href="#_tag_detection"></a>1. Tag detection</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Select <span class="menuseq"><b class="menu">View</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Zoom</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Reset</b></span> to reset the zoom level to the default setting.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Shopify states that tags aren&#8217;t case-sensitive; however, they are. This is a known issue, and they&#8217;re working on it.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Liquid Template Example</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-liquid hljs" data-lang="liquid">{% assign customer_tags_dc = customer.tags | join: '~~~' | downcase | split: '~~~' %}
+{% if customer_tags_dc contains 'vouched' %}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+    <div>
+       <a href="https://maplemike.github.io/technical-notes/sitemap.xml" target="_blank">Site map</a> |
+       <a href="https://maplemike.github.io/technical-notes" target="_blank">Technical Notes</a> |
+       <a href="#" target="_blank">MIT License</a>
+</footer>
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
+  </body>
+</html>

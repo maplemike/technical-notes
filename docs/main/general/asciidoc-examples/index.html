@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>AsciiDoc Syntax Quick Reference :: Technical Notes</title>
+    <link rel="canonical" href="https://maplemike.github.io/technical-notes/docs/main/general/asciidoc-examples/">
+    <meta name="description" content="The quick reference for common AsciiDoc document and text formatting markup.">
+    <meta name="generator" content="Antora 3.1.2">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+<link rel="stylesheet" href="../../../../_/css/extra.css">
+<link rel="stylesheet" href="../../../../_/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="../../../../_/img/favicon.ico" type="image/x-icon">
+<script>var uiRootPath = '../../../../_'</script>
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <button class="navbar-burger" data-target="topbar-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <img src="../../../../_/img/project-logo.svg" class="navbar-logo" alt="Project logo">
+        <a href="https://maplemike.github.io/technical-notes/index.html">Technical Notes</a>
+      </div>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item hide-for-print">
+          <div id="search-field" class="field">
+            <input id="search-input" type="text" placeholder="Search the docs" autofocus>
+          </div>
+        </div>
+        <a class="navbar-item" href="https://github.com/maplemike/technical-notes/">
+          <img src="../../../../_/img/github.svg" alt="View source code on GitHub">
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="main">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../">Technical information</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">General guide</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../">Technical Notes</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="./">Syntax Quick Reference</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Shopify guide</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../shopify/liquid/">Shopify Liquid</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Technical information</span>
+    <span class="version">main</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../">Technical information</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../">main</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../">Technical information</a></li>
+    <li>General guide</li>
+    <li><a href="./">Syntax Quick Reference</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/maplemike/technical-notes/edit/main/modules/general/pages/asciidoc-examples.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">AsciiDoc Syntax Quick Reference</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Cool Shit</div>
+<ul class="sectlevel1">
+<li><a href="#_macros">Macros</a>
+<ul class="sectlevel2">
+<li><a href="#_keyboard_macro">Keyboard Macro</a></li>
+<li><a href="#_button_macro">Button Macro</a></li>
+<li><a href="#_menu_macro">Menu Macro</a></li>
+</ul>
+</li>
+<li><a href="#_lists">Lists</a>
+<ul class="sectlevel2">
+<li><a href="#_basic_description_lists">Basic Description Lists</a></li>
+<li><a href="#_separating_lists">Separating Lists</a></li>
+<li><a href="#_description_lists">Description Lists</a></li>
+</ul>
+</li>
+<li><a href="#_admonitions">Admonitions</a></li>
+<li><a href="#_substitutions">Substitutions</a>
+<ul class="sectlevel2">
+<li><a href="#_checkbox">Checkbox</a></li>
+<li><a href="#_copyright">Copyright</a></li>
+<li><a href="#_ditaa">Ditaa</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The examples on this page demonstrate the output produced by the built-in HTML converter.
+AsciiDoc expects an AsciiDoc converter to produce complementary output when generating other output formats, such as PDF, EPUB, and DocBook.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_macros"><a class="anchor" href="#_macros"></a>Macros</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_keyboard_macro"><a class="anchor" href="#_keyboard_macro"></a>Keyboard Macro</h3>
+<div class="paragraph">
+<p>The keyboard macro uses the short (no target) macro syntax <span class="keyseq"><kbd>key(</kbd>+<kbd>key)*</kbd></span>.
+Asciidoc displays each key exactly as entered in the document.
+Asciidoc separates multiple keys by a plus (e.g., Ctrl+T) or a comma (e.g., Ctrl,T).
+The plus is preferred.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">|===
+|Shortcut |Purpose
+
+|kbd:[F11]
+|Toggle fullscreen
+
+|kbd:[Ctrl+T]
+|Open a new tab
+
+|kbd:[Ctrl+Shift+N]
+|New incognito window
+
+|kbd:[\ ]
+|Used to escape characters
+
+|kbd:[Ctrl+\]]
+|Jump to keyword
+
+|kbd:[Ctrl + +]
+|Increase zoom
+|===</code></pre>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+Sidebars are used to visually separate auxiliary bits of content
+that supplement the main text.
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Optional Title</div>
+<div class="paragraph">
+<p>AsciiDoc uses sidebars to visually separate auxiliary bits of content
+that supplement the main text.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+They can contain any type of content.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Source code block in a sidebar</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">const { expect, expectCalledWith, heredoc } = require('../test/test-utils')</code></pre>
+</div>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Shortcut</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>F11</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Toggle fullscreen</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>T</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open a new tab</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>N</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New incognito window</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>\</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to escape characters</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>]</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Jump to keyword</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>+</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Increase zoom</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_button_macro"><a class="anchor" href="#_button_macro"></a>Button Macro</h3>
+<div class="paragraph">
+<p>Press <b class="button">OK</b> when you are finished.</p>
+</div>
+<div class="paragraph">
+<p>Select a file in the file navigator and click <b class="button">Open</b>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_menu_macro"><a class="anchor" href="#_menu_macro"></a>Menu Macro</h3>
+<div class="paragraph">
+<p>Trying to explain how to select a menu item can be a pain. With the menu macro, the symbols do the work.</p>
+</div>
+<div class="sect3">
+<h4 id="_example"><a class="anchor" href="#_example"></a>Example</h4>
+<div class="paragraph">
+<p>To save the file, select <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Save</b></span>.</p>
+</div>
+<div class="paragraph">
+<p>Select <span class="menuseq"><b class="menu">View</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Zoom</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Reset</b></span> to reset the zoom level to the default setting.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lists"><a class="anchor" href="#_lists"></a>Lists</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_basic_description_lists"><a class="anchor" href="#_basic_description_lists"></a>Basic Description Lists</h3>
+<div class="paragraph">
+<p>Here is an example:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">CPU</dt>
+<dd>
+<p>The brain of the computer.</p>
+</dd>
+<dt class="hdlist1">Hard drive</dt>
+<dd>
+<p>Permanent storage for operating system and/or user files.</p>
+</dd>
+<dt class="hdlist1">RAM</dt>
+<dd>
+<p>Temporarily stores information the CPU uses during operation.</p>
+</dd>
+<dt class="hdlist1">Keyboard</dt>
+<dd>
+<p>Used to enter text or control items on the screen.</p>
+</dd>
+<dt class="hdlist1">Mouse</dt>
+<dd>
+<p>Used to point to and select items on your computer screen.</p>
+</dd>
+<dt class="hdlist1">Monitor</dt>
+<dd>
+<p>Displays information in visual form using text and graphics.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_separating_lists"><a class="anchor" href="#_separating_lists"></a>Separating Lists</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Apples</p>
+</li>
+<li>
+<p>Oranges</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Walnuts</p>
+</li>
+<li>
+<p>Almonds</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_description_lists"><a class="anchor" href="#_description_lists"></a>Description Lists</h3>
+<div class="sect3">
+<h4 id="_horizontal_description_list"><a class="anchor" href="#_horizontal_description_list"></a>Horizontal Description List</h4>
+<div class="paragraph">
+<p>Here is an example:</p>
+</div>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+CPU
+</td>
+<td class="hdlist2">
+<p>The brain of the computer.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Hard drive
+</td>
+<td class="hdlist2">
+<p>Permanent storage for operating system and/or user files.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+RAM
+</td>
+<td class="hdlist2">
+<p>Temporarily stores information the CPU uses during operation.</p>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Here is an example:</p>
+</div>
+<div class="hdlist">
+<table>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tr>
+<td class="hdlist1">
+A short term
+</td>
+<td class="hdlist2">
+<p>The term for this item likely fits inside the column&#8217;s width.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+A long term that wraps across multiple lines
+</td>
+<td class="hdlist2">
+<p>The term for this item wraps since the width of the term column is restricted using the <code>labelwidth</code> attribute.</p>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Here is an example:</p>
+</div>
+<div class="dlist unordered">
+<dl>
+<dt>boolean</dt>
+<dd>
+<p>use true and false, not 1 and 0 or T and F</p>
+</dd>
+<dt>number</dt>
+<dd>
+<p>use Arabic numerals without punctuation (other than the decimal point to make a floating point number)</p>
+</dd>
+<dt>enumerated value</dt>
+<dd>
+<p>use only one of the allowed values, respecting case</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_admonitions"><a class="anchor" href="#_admonitions"></a>Admonitions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here is an example:</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Wolpertingers are known to nest in server racks.
+Enter at your own risk.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Here is an example:</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="&#128161;"></i>
+</td>
+<td class="content">
+It&#8217;s possible to use Unicode glyphs as admonition icons.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="&#128161;"></i>
+</td>
+<td class="content">
+It&#8217;s possible to use emojis as admonition icons on GitHub.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_substitutions"><a class="anchor" href="#_substitutions"></a>Substitutions</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_checkbox"><a class="anchor" href="#_checkbox"></a>Checkbox</h3>
+<div class="paragraph">
+<p>[&#10004;] That&#8217;s done!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_copyright"><a class="anchor" href="#_copyright"></a>Copyright</h3>
+<div class="paragraph">
+<p>Copyright &#169; 2023 Michael MacKinnon. All Rights Reserved.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ditaa"><a class="anchor" href="#_ditaa"></a>Ditaa</h3>
+<div class="literalblock">
+<div class="content">
+<pre>                   +-------------+
+                   | Asciidoctor |-------+
+                   |   diagram   |       |
+                   +-------------+       | PNG out
+                       ^                 |
+                       | ditaa in        |
+                       |                 v
+ +--------+   +--------+----+    /---------------\
+ |        | --+ Asciidoctor +--&gt; |               |
+ |  Text  |   +-------------+    |   Beautiful   |
+ |Document|   |   !magic!   |    |    Output     |
+ |     {d}|   |             |    |               |
+ +---+----+   +-------------+    \---------------/
+     :                                   ^
+     |          Lots of work             |
+     +-----------------------------------+</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Google was not sure what to do with that information.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+    <div>
+       <a href="https://maplemike.github.io/technical-notes/sitemap.xml" target="_blank">Site map</a> |
+       <a href="https://maplemike.github.io/technical-notes" target="_blank">Technical Notes</a> |
+       <a href="#" target="_blank">MIT License</a>
+</footer>
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
+  </body>
+</html>
